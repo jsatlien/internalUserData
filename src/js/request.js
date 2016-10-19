@@ -4,7 +4,7 @@ var API_DATA = $.ajax({
   url: 'https://randomuser.me/api/',
   dataType: 'json',
   data: {
-    results: 12
+    results: 13
   }
 });
 
