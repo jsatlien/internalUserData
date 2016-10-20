@@ -4,7 +4,7 @@ import { API_DATA } from './request'
 
 function storeInfo(data) {
     console.log(data);
-    for (var count = 1; count <= data.results.length; count++) {
+    for (var count = 0; count < data.results.length; count++) {
         var image = data.results[count].picture.large;
         var firstname = data.results[count].name.first;
         var lastname = data.results[count].name.last;
@@ -18,11 +18,12 @@ function storeInfo(data) {
 
         var newHTML = `
             <div class="eachresult">
+              <span id="imageshadow"></span>
               <img src="${image}" alt="pic"/>
               <div class="name">${firstname} ${lastname}</div>
               <div class="email">${email}</div>
-              <div class="address">${street}</div>
-              <div class="address">${city}, ${state} ${postcode}</div>
+              <div class="address" id="street">${street}</div>
+              <div class="address" id="city">${city}, ${state} ${postcode}</div>
               <div class="address" id="phone">${phone}</div>
               <div class="social">${ssn}</div>
             </div>        `;
